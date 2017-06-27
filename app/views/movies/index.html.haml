@@ -1,4 +1,4 @@
 %h1 映画一覧
 - @movies.each do |movie|
-  %h3= movie.title
+  %h3= link_to movie.title, "/movies/#{movie.id}"
   %p= movie.release_date
