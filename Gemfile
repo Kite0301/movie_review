@@ -39,6 +39,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise' # if you need
 
+gem 'active_admin_flat_skin'
+gem "font-awesome-rails"
+
 # Progateで使う際には消す
 gem 'haml-rails'
 gem 'erb2haml'
