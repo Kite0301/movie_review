@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'login' => 'users#login_form'
+  post 'login' => 'users#login'
 
   get 'movies' => 'movies#index'
   get 'movies/:id' => 'movies#show'
