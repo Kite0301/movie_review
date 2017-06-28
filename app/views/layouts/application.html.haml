@@ -12,5 +12,9 @@
         Movie.com
       %ul.header-menus
         %li= link_to '映画一覧', '/movies'
-        %li ログイン
+        - if @current_user
+          %li= @current_user.name
+          %li ログアウト
+        - else
+          %li= link_to 'ログイン', '/login'
     = yield
