@@ -14,7 +14,7 @@
         %li= link_to '映画一覧', '/movies'
         - if @current_user
           %li= @current_user.name
-          %li ログアウト
+          %li= link_to 'ログアウト', '/logout', {method: :post}
         - else
           %li= link_to 'ログイン', '/login'
     = yield
