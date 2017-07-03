@@ -17,4 +17,8 @@
           %li= link_to 'ログアウト', '/logout', {method: :post}
         - else
           %li= link_to 'ログイン', '/login'
+
+    - if flash[:notice]
+      .flash= flash[:notice]
+
     = yield
