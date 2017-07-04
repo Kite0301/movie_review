@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  get "/" => "home#top"
+  get "about" => "home#about"
+
   get "signup" => "users#new"
   post "users/create" => "users#create"
   post "users/:id/update" => "users#update"
