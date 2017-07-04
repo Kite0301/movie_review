@@ -45,7 +45,8 @@ body {
 
 .main {
   position: absolute;
-  top: 64px;
+  // top: 64px;
+  padding-top: 64px;
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -68,15 +69,15 @@ h1, h2 {
 header {
   height: 64px;
   line-height: 64px;
-  // position: absolute;
+  position: absolute;
   z-index: 1;
   width: 100%;
   background-color: #deebff;
+  padding: 0 20px;
 }
 
 .header-logo {
   float: left;
-  padding-left: 20px;
   font-size: 22px;
 }
 
@@ -86,7 +87,6 @@ header {
 
 .header-menus {
   float: right;
-  padding-right: 20px;
 }
 
 .header-menus li {
