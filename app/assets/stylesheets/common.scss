@@ -50,7 +50,7 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #f5f8fa;
+  background-color: #f8f8f8;
 }
 
 .container {
@@ -69,11 +69,16 @@ h1, h2 {
 header {
   height: 64px;
   line-height: 64px;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   width: 100%;
-  background-color: #deebff;
   padding: 0 20px;
+  background-color: #333;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+
+header a {
+  // color: rgba(255,255,255,.65);
 }
 
 .header-logo {
@@ -83,6 +88,12 @@ header {
 
 .header-logo a {
   font-size: 22px;
+  color: #fff;
+  opacity: .65;
+}
+
+.header-logo a:hover {
+  opacity: 1;
 }
 
 .header-menus {
@@ -98,6 +109,12 @@ header {
 .header-menus a {
   float: left;
   font-size: 13px;
+  color: #fff;
+  opacity: .65;
+}
+
+.header-menus a:hover {
+  opacity: 1;
 }
 
 .header-menus .fa {
