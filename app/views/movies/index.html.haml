@@ -1,6 +1,12 @@
 .main.movies-index
   .container
     %h1 映画一覧
-    - @movies.each do |movie|
-      %h3= link_to movie.title, "/movies/#{movie.id}"
-      %p= movie.release_date
+    .movie-card-wrapper
+      - @movies.each do |movie|
+        = link_to "/movies/#{movie.id}" do
+          .movie-card
+            .movie-card__image
+              %img{ src: 'http://eiga.k-img.com/images/movie/83796/photo/5eabb1a8bc7a6e98/160.jpg?1467791823' }
+            .movie-card__text
+              %h3= movie.title
+              %p= movie.release_date
