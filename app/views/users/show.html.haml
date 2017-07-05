@@ -1,5 +1,7 @@
-%h3
-  名前
-  = @user.name
+.main.users-show
+  .container
+    %h3
+      名前
+      = @user.name
 
-= link_to '編集', "/users/#{@user.id}/edit"
+    = link_to '編集', "/users/#{@user.id}/edit"
