@@ -1,6 +1,12 @@
 .main.movies-show
   .container
     %h2= @movie.title
+    .average_point
+      平均レビュー:
+      - if @movie.average_point
+        = @movie.average_point
+      - else
+        N/A
     %p
       公開日:
       = @movie.release_date
