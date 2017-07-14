@@ -5,6 +5,8 @@
       平均レビュー:
       - if @movie.average_point
         = @movie.average_point
+        %br
+        = link_to 'すべての評価を見る', "/movies/#{@movie.id}/reviews"
       - else
         N/A
     %p
