@@ -15,6 +15,13 @@ Rails.application.routes.draw do
   post 'logout' => 'users#logout'
 
   get 'movies' => 'movies#index'
+  get 'movies/:id/reviews' => 'movies#reviews'
   get 'movies/:id' => 'movies#show'
+
+  get 'reviews/:movie_id/new' => 'reviews#new'
+  post 'reviews/:movie_id/create' => 'reviews#create'
+  get 'reviews/:movie_id/edit' => 'reviews#edit'
+  post 'reviews/:movie_id/update' => 'reviews#update'
+  post 'reviews/:movie_id/destroy' => 'reviews#destroy'
 
 end

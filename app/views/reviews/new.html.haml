@@ -1,0 +1,14 @@
+.main.reviews-new
+  .container
+    %h1 「#{@review.movie.title}」の評価
+    .form.users-form
+      .form-body
+        - @review.errors.full_messages.each do |message|
+          .form-error
+            = message
+        = form_tag("/reviews/#{@review.movie.id}/create") do
+          %p 点数（1 ~ 5）
+          %input{ name: 'point', value: @review.point }
+          %p コメント（任意）
+          %textarea{ name: 'content' }= @review.content
+          %input{ type: 'submit', value: '送信' }
