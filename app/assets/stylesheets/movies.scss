@@ -60,13 +60,26 @@
     padding: 20px 10px;
 
     .review-overview__left {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 18px;
+
+      .fa {
+        color: #ffaa00;
+        margin-left: 5px;
+      }
+
+      span {
+        color: #464646;
+      }
     }
 
     .review-overview__right {
       text-align: right;
     }
+  }
+
+  h2 {
+    border-bottom: 1px dotted #a2a2a2;
+    padding: 15px 0 10px;
   }
 
   .review-item {
@@ -96,6 +109,14 @@
     .review-item__content {
       font-size: 16px;
       margin-top: 10px;
+    }
+
+    .review-item__edit {
+      float: right;
+
+      a {
+        margin-left: 10px;
+      }
     }
   }
 }
