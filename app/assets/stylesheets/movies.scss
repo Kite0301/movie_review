@@ -35,8 +35,19 @@
           line-height: 22px;
         }
 
+        .fa {
+          color: #ffaa00;
+        }
+
+        span {
+          color: #464646;
+          font-weight: bold;
+          padding-left: 3px;
+        }
+
         p {
           color: #777;
+          float: right;
         }
       }
     }

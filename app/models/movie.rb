@@ -8,6 +8,6 @@ class Movie < ApplicationRecord
     reviews.each do |review|
       total_point += review.point
     end
-    return (total_point.to_f / reviews.count).round(2)
+    return (total_point.to_f / reviews.count).round(1)
   end
 end
