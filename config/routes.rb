@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post 'logout' => 'users#logout'
 
   get 'movies' => 'movies#index'
+  get 'movies/:id/reviews' => 'movies#reviews'
   get 'movies/:id' => 'movies#show'
 
 end

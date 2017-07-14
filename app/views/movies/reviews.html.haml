@@ -1,0 +1,19 @@
+.main.movies-review
+  .container
+    %h1「#{@movie.title}」の評価
+    .review-overview
+      .review-overview__left
+        %p
+          #{@movie.reviews.count}件の評価
+          %br
+          平均評価 #{@movie.average_point}点
+      .review-overview__right
+        = link_to '映画説明に戻る', "/movies/#{@movie.id}"
+    - @movie.reviews.each do |review|
+      .review-item
+        .review-item__user-name= review.user.name
+        .review-item__point
+          %i.fa.fa-star
+          = review.point
+        - if review.content
+          .review-item__content= review.content
