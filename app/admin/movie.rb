@@ -12,6 +12,6 @@ ActiveAdmin.register Movie do
 #   permitted
 # end
 
-permit_params :title, :description, :release_date
+permit_params :title, :description, :release_date, :image
 
 end
