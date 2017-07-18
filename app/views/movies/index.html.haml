@@ -6,7 +6,10 @@
         = link_to "/movies/#{movie.id}" do
           .movie-card
             .movie-card__image
-              %img{ src: 'http://eiga.k-img.com/images/movie/83796/photo/5eabb1a8bc7a6e98/160.jpg?1467791823' }
+              - if movie.image
+                %img{ src: "https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{movie.image}" }
+              - else
+                %img{ src: 'https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/dummy.png' }
             .movie-card__text
               %h3= movie.title
               %i.fa.fa-star
