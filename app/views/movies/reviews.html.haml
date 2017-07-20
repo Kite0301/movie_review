@@ -1,14 +1,20 @@
 .main.movies-review
   .container
-    %h1「#{@movie.title}」の評価
-    .review-overview
-      .review-overview__left
-        %p
-          #{@movie.reviews.count}件の評価
-          %i.fa.fa-star
-          %span= @movie.average_point
-      .review-overview__right
-        = link_to '映画詳細に戻る', "/movies/#{@movie.id}"
+    %h1.movie-title= @movie.title
+    .movie-review
+      - if @movie.average_point
+        %i.fa.fa-star
+        .movie-point= @movie.average_point
+      - else
+        N/A
+
+    .movie-menu
+      = link_to "/movies/#{@movie.id}" do
+        .movie-menu-item
+          映画情報
+      = link_to "/movies/#{@movie.id}/reviews" do
+        .movie-menu-item.active
+          レビュー
 
     %h2 あなたの評価
     - if @current_user_review
