@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = "「#{@review.movie.title}」を評価しました"
-      redirect_to("/movies/#{@review.movie.id}/reviews")
+      redirect_to("/movies/#{@review.movie.id}")
     else
       render('reviews/new')
     end
@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = "「#{@review.movie.title}」の評価を更新しました"
-      redirect_to("/movies/#{@review.movie.id}/reviews")
+      redirect_to("/movies/#{@review.movie.id}")
     else
       render('reviews/edit')
     end
@@ -50,6 +50,6 @@ class ReviewsController < ApplicationController
     @review.destroy
     movie = Movie.find_by(id: params[:movie_id])
     flash[:notice] = "「#{movie.title}」の評価を削除しました"
-    redirect_to("/movies/#{movie.id}/reviews")
+    redirect_to("/movies/#{movie.id}")
   end
 end
