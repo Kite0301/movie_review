@@ -17,30 +17,32 @@
           レビュー
 
     %h2 あなたの評価
-    - if @current_user_review
-      .review-item
-        .review-item__user-name= @current_user.name
-        .review-item__point
-          %i.fa.fa-star
-          = @current_user_review.point
-        .review-item__edit
-          = link_to '編集', "/reviews/#{@movie.id}/edit"
-          = link_to '削除', "/reviews/#{@movie.id}/destroy", method: :post
-        - if @current_user_review.content
-          .review-item__content= @current_user_review.content
-    - else
-      .no-review-message
-        あなたはまだこの映画を評価していません
-        %br
-        = link_to '評価する', "/reviews/#{@movie.id}/new"
-
-    %h2 みんなの評価
-    - @movie.reviews.each do |review|
-      - if review.user != @current_user
+    .review-item-wrapper
+      - if @current_user_review
         .review-item
-          .review-item__user-name= review.user.name
+          .review-item__user-name= @current_user.name
           .review-item__point
             %i.fa.fa-star
-            = review.point
-          - if review.content
-            .review-item__content= review.content
+            = @current_user_review.point
+          .review-item__edit
+            = link_to '編集', "/reviews/#{@movie.id}/edit"
+            = link_to '削除', "/reviews/#{@movie.id}/destroy", method: :post
+          - if @current_user_review.content
+            .review-item__content= @current_user_review.content
+      - else
+        .no-review-message
+          あなたはまだこの映画を評価していません
+          %br
+          = link_to '評価する', "/reviews/#{@movie.id}/new"
+
+    %h2 みんなの評価
+    .review-item-wrapper
+      - @movie.reviews.each do |review|
+        - if review.user != @current_user
+          .review-item
+            .review-item__user-name= review.user.name
+            .review-item__point
+              %i.fa.fa-star
+              = review.point
+            - if review.content
+              .review-item__content= review.content
