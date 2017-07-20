@@ -1,17 +1,31 @@
 .main.movies-show
   .container
-    %h2= @movie.title
-    .average_point
-      平均レビュー:
+    %h1.movie-title= @movie.title
+    .movie-review
       - if @movie.average_point
-        = @movie.average_point
-        %br
-        = link_to 'すべての評価を見る', "/movies/#{@movie.id}/reviews"
+        %i.fa.fa-star
+        .movie-point= @movie.average_point
       - else
         N/A
-    %p
-      公開日:
-      = @movie.release_date
-    %p= @movie.description
 
-    = link_to '一覧に戻る', '/movies'
+    .movie-menu
+      = link_to "/movies/#{@movie.id}" do
+        .movie-menu-item.active
+          映画情報
+      = link_to "/movies/#{@movie.id}/reviews" do
+        .movie-menu-item
+          レビュー
+
+    .movie-detail
+      .movie-detail__image
+        - if @movie.image
+          %img{ src: "https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{@movie.image}" }
+        - else
+          %img{ src: 'https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/dummy.png' }
+
+      .movie-detail__text
+        %p
+          劇場公開日:
+          = @movie.release_date.strftime("%Y年%m月%d日")
+        %p= @movie.description
+        = link_to '一覧に戻る', '/movies'

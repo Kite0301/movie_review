@@ -54,6 +54,70 @@
   }
 }
 
+/* movies#show ================================ */
+.movie-title {
+  margin-bottom: 10px;
+}
+
+.movie-review {
+  font-size: 22px;
+  margin-bottom: 20px;
+
+  .fa {
+    color: #ffaa00;
+    margin-left: 5px;
+  }
+
+  .movie-point {
+    display: inline-block;
+    color: #464646;
+  }
+}
+
+.movie-menu {
+  margin-bottom: 30px;
+
+  .movie-menu-item {
+    display: inline-block;
+    width: 49%;
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+
+    &.active {
+      background-color: #d2d2d2;
+    }
+  }
+}
+
+.movie-detail {
+  .movie-detail__text {
+    display: inline-block;
+    width: 65%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    padding-left: 40px;
+
+    p {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .movie-detail__image {
+    display: inline-block;
+    width: 34%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    padding-left: 3px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 /* movies#reviews ================================ */
 .movies-review {
   .review-overview {
