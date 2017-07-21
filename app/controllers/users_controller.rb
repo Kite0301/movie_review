@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
-      image: "users/default.png"
+      image: "default.png"
     )
     if @user.save
       session[:user_id] = @user.id
@@ -58,6 +58,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+
+    if params[:image]
+      @user.image = "users/#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/#{@user.image}", image.read)
+    end
 
     if @user.save
       flash[:notice] = "ユーザー情報を編集しました"
