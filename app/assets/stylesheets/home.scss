@@ -1,3 +1,48 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* home#top ================================ */
+.home-top {
+  padding-top: 64px;
+
+  .jumbotron {
+    background: linear-gradient(-45deg, rgba(29, 43, 99, 0.65), rgba(249, 205, 218, 0.65)),
+                url("/top.jpg");
+    // background: url("/top.jpg");
+    background-size: cover;
+    text-align: center;
+    padding: 75px 0;
+
+    .jumbotron-title {
+      opacity: .9;
+      color: #fff;
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .jumbotron-text {
+      opacity: .9;
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+
+    .jumbotron-btn {
+      opacity: .9;
+      font-size: 18px;
+      display: inline-block;
+      padding: 12px 40px 10px;
+      border-radius: 30px;
+      border: 2px solid #fff;
+      color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        color: #3c3c3c;
+      }
+    }
+  }
+
+  .features {
+    height: 400px;
+  }
+}

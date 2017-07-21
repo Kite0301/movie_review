@@ -1,3 +1,14 @@
 .main.home-top
-  .container
-    %h1 ようこそ
+  %section.jumbotron
+    .container
+      %h2.jumbotron-title 最高の一本を見つけよう
+      %p.jumbotron-text
+        ここにかっこいい感じの文章をいれたい。
+        %br
+        これくらいの長さでいい感じの文章がほしい。
+      = link_to '/movies' do
+        .jumbotron-btn
+          映画を探す
+
+  %section.features
+    -# TODO: 続きのコードを書く
