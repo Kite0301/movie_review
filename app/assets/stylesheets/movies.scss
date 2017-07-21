@@ -132,6 +132,17 @@
   padding: 20px 30px;
   font-size: 18px;
 
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin-right: 5px;
+    object-fit: cover;
+    // border: 1px solid #d0d8de;
+    vertical-align: bottom;
+  }
+
   .review-item__user-name {
     display: inline-block;
     color: #464646;

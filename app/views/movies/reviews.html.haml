@@ -22,6 +22,7 @@
         - current_user_review = @current_user.review_for(@movie)
         - if current_user_review
           .review-item
+            %img{src: "/#{@current_user.image}" }
             .review-item__user-name= @current_user.name
             .review-item__point
               %i.fa.fa-star
@@ -47,6 +48,7 @@
       - @movie.reviews.each do |review|
         - if review.user != @current_user
           .review-item
+            %img{src: "/#{review.user.image}" }
             .review-item__user-name= review.user.name
             .review-item__point
               %i.fa.fa-star
