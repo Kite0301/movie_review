@@ -54,75 +54,115 @@
   }
 }
 
+/* movies#show ================================ */
+.movie-title {
+  margin-bottom: 10px;
+}
+
+.movie-review {
+  font-size: 22px;
+  margin-bottom: 20px;
+
+  .fa {
+    color: #ffaa00;
+    margin-left: 5px;
+  }
+
+  .movie-point {
+    display: inline-block;
+    color: #464646;
+  }
+}
+
+.movie-menu {
+  margin-bottom: 30px;
+
+  .movie-menu-item {
+    display: inline-block;
+    width: 49%;
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+
+    &.active {
+      background-color: #d2d2d2;
+    }
+  }
+}
+
+.movie-detail {
+  .movie-detail__text {
+    display: inline-block;
+    width: 65%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    padding-left: 40px;
+
+    p {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .movie-detail__image {
+    display: inline-block;
+    width: 34%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    padding-left: 3px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 /* movies#reviews ================================ */
-.movies-review {
-  .review-overview {
-    padding: 20px 10px;
+.review-item-wrapper {
+  padding-bottom: 30px;
+}
 
-    .review-overview__left {
-      font-size: 18px;
+.review-item {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 20px 30px;
+  font-size: 18px;
 
-      .fa {
-        color: #ffaa00;
-        margin-left: 5px;
-      }
+  .review-item__user-name {
+    display: inline-block;
+    color: #464646;
+  }
 
-      span {
-        color: #464646;
-      }
-    }
+  .review-item__point {
+    display: inline-block;
+    margin-left: 10px;
+    color: #464646;
 
-    .review-overview__right {
-      text-align: right;
+    .fa {
+      color: #ffaa00;
     }
   }
 
-  h2 {
-    border-bottom: 1px dotted #a2a2a2;
-    padding: 15px 0 10px;
-  }
-
-  .review-item {
-    background-color: #fff;
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
-    border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 20px 30px;
-    font-size: 18px;
-
-    .review-item__user-name {
-      display: inline-block;
-      color: #464646;
-    }
-
-    .review-item__point {
-      display: inline-block;
-      margin-left: 10px;
-      color: #464646;
-
-      .fa {
-        color: #ffaa00;
-      }
-    }
-
-    .review-item__content {
-      font-size: 16px;
-      margin-top: 10px;
-    }
-
-    .review-item__edit {
-      float: right;
-
-      a {
-        margin-left: 10px;
-      }
-    }
-  }
-
-  .no-review-message {
-    margin-bottom: 20px;
-    line-height: 26px;
+  .review-item__content {
     font-size: 16px;
+    margin-top: 10px;
   }
+
+  .review-item__edit {
+    float: right;
+
+    a {
+      margin-left: 10px;
+    }
+  }
+}
+
+.no-review-message {
+  margin-bottom: 20px;
+  line-height: 26px;
+  font-size: 16px;
 }
