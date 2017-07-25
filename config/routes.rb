@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get "/" => "home#top"
-  get "about" => "home#about"
 
   get "signup" => "users#new"
   post "users/create" => "users#create"
