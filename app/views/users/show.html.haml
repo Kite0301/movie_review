@@ -5,3 +5,20 @@
       %h2= @user.name
       %p= @user.email
       = link_to '編集', "/users/#{@user.id}/edit"
+    %p レビューした映画一覧
+    .user-review-movie-wrapper
+      - @reviews.each do |review|
+        - movie = review.movie
+        = link_to "/movies/#{movie.id}" do
+          .user-review-movie-card
+            .user-review-movie-card__image
+              - if movie.image
+                %img{ src: "https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{review.movie.image}" }
+              - else
+                %img{ src: 'https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/dummy.png' }
+            .user-review-movie-card__text
+              .movie-title= movie.title
+              .review-point
+                %p= "#{@user.name}さんの評価"
+                %i.fa.fa-star
+                %span= review.point
