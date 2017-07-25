@@ -10,4 +10,9 @@ class MoviesController < ApplicationController
   def reviews
     @movie = Movie.find_by(id: params[:id])
   end
+
+  def search
+    @movies = Movie.all
+    render 'movies/index'
+  end
 end

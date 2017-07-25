@@ -1,6 +1,10 @@
 .main.movies-index
   .container
     %h1 映画一覧
+    .movies-search
+      = form_tag('/movies/search') do
+        %input{ name: 'text', value: params[:text] }
+        %input{ type: 'submit', value: '検索' }
     .movie-card-wrapper
       - @movies.each do |movie|
         = link_to "/movies/#{movie.id}" do
