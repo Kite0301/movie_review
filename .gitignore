@@ -22,3 +22,4 @@
 
 /public/users/*
 !/public/users/.keep
+/vendor/bundler
