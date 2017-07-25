@@ -1,17 +1,23 @@
 .main.movies-index
   .container
-    %h1 映画一覧
-    .movie-card-wrapper
-      - @movies.each do |movie|
-        = link_to "/movies/#{movie.id}" do
-          .movie-card
-            .movie-card__image
-              - if movie.image
-                %img{ src: "https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{movie.image}" }
-              - else
-                %img{ src: 'https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/dummy.png' }
-            .movie-card__text
-              %h3= movie.title
-              %i.fa.fa-star
-              %span= movie.average_point
-              %p= movie.release_date
+    .movies-search-form
+      = form_tag('/movies/search', :method => :get) do
+        %input{ class: 'search-input', name: 'search_word', value: params[:search_word], placeholder: '気になる映画を検索する' }
+        %input{ class: 'search-btn', type: 'submit', value: '検索' }
+    - if @movies != []
+      .movie-card-wrapper
+        - @movies.each do |movie|
+          = link_to "/movies/#{movie.id}" do
+            .movie-card
+              .movie-card__image
+                - if movie.image
+                  %img{ src: "https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{movie.image}" }
+                - else
+                  %img{ src: 'https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/dummy.png' }
+              .movie-card__text
+                %h3= movie.title
+                %i.fa.fa-star
+                %span= movie.average_point
+                %p= movie.release_date
+    - else
+      %h2 検索結果に一致する映画はありません

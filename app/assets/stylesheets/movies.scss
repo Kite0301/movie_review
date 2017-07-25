@@ -1,5 +1,37 @@
 /* movies#index ================================ */
 .movies-index {
+  h2 {
+    text-align: center;
+  }
+
+  .movies-search-form {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    .search-input {
+      width: 80%;
+      padding: 13px;
+      background-color: #fff;
+      border: 1px solid #e7e7e7;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    .search-btn {
+      background-image: none;
+      background-color: #333;
+      border-radius: 4px;
+      padding: 14px;
+      width: 10%;
+      font-size: 15px;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
   .movie-card-wrapper {
     position: relative;
     letter-spacing: -.4em;

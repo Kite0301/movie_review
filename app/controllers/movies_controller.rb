@@ -10,4 +10,13 @@ class MoviesController < ApplicationController
   def reviews
     @movie = Movie.find_by(id: params[:id])
   end
+
+  def search
+    if params[:search_word] == ''
+      @movies = Movie.all
+    else
+      @movies = Movie.where(title: params[:search_word])
+    end
+    render('movies/index')
+  end
 end
