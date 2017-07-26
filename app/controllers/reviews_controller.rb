@@ -1,4 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user, only: [:new, :create]
+  before_action :set_review, only: [:edit, :update, :destroy]
+
+  def index
+    @movie = Movie.find_by(id: params[:movie_id])
+  end
+
   def new
     @review = Review.new(movie_id: params[:movie_id])
   end
@@ -20,17 +27,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find_by(
-      user_id: @current_user.id,
-      movie_id: params[:movie_id],
-    )
   end
 
   def update
-    @review = Review.find_by(
-      user_id: @current_user.id,
-      movie_id: params[:movie_id],
-    )
     @review.point = params[:point].to_i
     @review.content = params[:content]
 
@@ -43,13 +42,12 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find_by(
-      user_id: @current_user.id,
-      movie_id: params[:movie_id],
-    )
     @review.destroy
-    movie = Movie.find_by(id: params[:movie_id])
-    flash[:notice] = "「#{movie.title}」の評価を削除しました"
-    redirect_to("/movies/#{movie.id}/reviews")
+    flash[:notice] = "「#{@review.movie.title}」の評価を削除しました"
+    redirect_to("/movies/#{@review.movie.id}/reviews")
+  end
+
+  def set_review
+    @review = Review.find_by(id: params[:id])
   end
 end

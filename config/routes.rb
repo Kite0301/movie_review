@@ -15,13 +15,13 @@ Rails.application.routes.draw do
 
   get 'movies' => 'movies#index'
   get 'movies/search' => 'movies#search'
-  get 'movies/:id/reviews' => 'movies#reviews'
   get 'movies/:id' => 'movies#show'
 
-  get 'reviews/:movie_id/new' => 'reviews#new'
-  post 'reviews/:movie_id/create' => 'reviews#create'
-  get 'reviews/:movie_id/edit' => 'reviews#edit'
-  post 'reviews/:movie_id/update' => 'reviews#update'
-  post 'reviews/:movie_id/destroy' => 'reviews#destroy'
+  get 'movies/:movie_id/reviews' => 'reviews#index'
+  get 'movies/:movie_id/reviews/new' => 'reviews#new'
+  post 'movies/:movie_id/reviews/create' => 'reviews#create'
+  get 'reviews/:id/edit' => 'reviews#edit'
+  post 'reviews/:id/update' => 'reviews#update'
+  post 'reviews/:id/destroy' => 'reviews#destroy'
 
 end

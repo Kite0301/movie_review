@@ -6,7 +6,7 @@
         - @review.errors.full_messages.each do |message|
           .form-error
             = message
-        = form_tag("/reviews/#{@review.movie.id}/update") do
+        = form_tag("/reviews/#{@review.id}/update") do
           %p 点数（1 ~ 5）
           %input{ name: 'point', value: @review.point }
           %p コメント（任意）
