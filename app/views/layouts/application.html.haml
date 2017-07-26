@@ -17,7 +17,6 @@
             = link_to 'Movie.com', '/'
         %ul.header-menus
           %li= link_to '映画一覧', '/movies'
-          %li= link_to 'Movie.comとは', '/about'
           - if @current_user
             %li= link_to @current_user.name, "/users/#{@current_user.id}"
             %li= link_to 'ログアウト', '/logout', {method: :post}
