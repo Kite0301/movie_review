@@ -4,7 +4,8 @@
       %img{src: "/#{@user.image}" }
       %h2= @user.name
       %p= @user.email
-      = link_to '編集', "/users/#{@user.id}/edit"
+      - if @current_user && @user.id == @current_user.id
+        = link_to '編集', "/users/#{@user.id}/edit"
     %p レビューした映画一覧
     .user-review-movie-wrapper
       - @reviews.each do |review|

@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
     if params[:search_word] == ''
       @movies = Movie.all
     else
-      @movies = Movie.where(title: params[:search_word])
+      @movies = Movie.where("title like ?", "%#{params[:search_word]}%")
     end
     render('movies/index')
   end
