@@ -29,15 +29,15 @@
               %i.fa.fa-star
               = current_user_review.point
             .review-item__edit
-              = link_to '編集', "/reviews/#{@movie.id}/edit"
-              = link_to '削除', "/reviews/#{@movie.id}/destroy", method: :post
+              = link_to '編集', "/reviews/#{current_user_review.id}/edit"
+              = link_to '削除', "/reviews/#{current_user_review.id}/destroy", method: :post
             - if current_user_review.content
               .review-item__content= current_user_review.content
         - else
           .no-review-message
             あなたはまだこの映画を評価していません。
             %br
-            = link_to '評価する', "/reviews/#{@movie.id}/new"
+            = link_to '評価する', "/movies/#{@movie.id}/reviews/new"
       - else
         .no-review-message
           映画を評価するにはログインが必要です。
