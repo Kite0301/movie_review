@@ -1,3 +1,53 @@
+/* users#new, users#login_form ================================ */
+.users-new {
+  .container {
+    max-width: 600px;
+  }
+
+  .form-heading {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 6px #c1ced7;
+
+    .form-error {
+      font-size: 17px;
+      color: #ff4d75;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #d8dadf;
+      border-radius: 2px;
+      padding: 10px;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    input[type=submit] {
+      margin-top: 10px;
+      margin-bottom: 0;
+      background-image: none;
+      background-color: #333;
+      font-weight: 300;
+      padding: 15px;
+    }
+  }
+}
+
 /* users#show ================================ */
 .users-show {
   text-align: center;
