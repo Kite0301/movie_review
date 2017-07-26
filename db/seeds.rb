@@ -1,121 +1,56 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+require "csv"
 
-users = [
-  {
-    name: 'まさ',
-    email: 'masa@example.com',
-    password: 'password',
-  },
-  {
-    name: '南部さん',
-    email: 'nambu@example.com',
-    password: 'password',
-  },
-  {
-    name: 'むらい',
-    email: 'muraikenta0507@example.com',
-    password: 'password',
-  },
-  {
-    name: 'みっちー',
-    email: 'michi@example.com',
-    password: 'password',
-  },
-  {
-    name: 'しょー',
-    email: 'sho@example.com',
-    password: 'password',
-  },
+CSV.foreach('db/users_data.csv') do |row|
+  # TODO: set image_name column data
+  User.create(name: row[0], email: row[1], password: row[2])
+end
+
+reviews_data = [
+  [1, "一度見ただけでは、内容を理解することができなかった。"],
+  [1, "期待はずれでした(´・ω・｀)"],
+  [1, "他のレビューが高評価ばかりなのですが、私にはよくわかりませんでした。"],
+  [1, "予想以上に内容が薄く、中途半端に感じました。"],
+  [1, "途中からかなり眠くなってしまった、、、"],
+  [2, "ビックリするほど退屈でした！"],
+  [2, "うーん、なんとも言えない気分です"],
+  [2, "最後の終わり方が少し雑に感じてしまい、残念でした"],
+  [2, "そんなに悪くはないけど、もう1回観たいとは思えないなー"],
+  [2, "映画自体は良かったのですが、主題歌がイマイチで台無しでした。"],
+  [3, "悪くはないけど、中身が無かった。次回作に期待。"],
+  [3, "そこそこ、といった印象です。ストーリー自体は面白かったです。"],
+  [3, "彼氏と観に行きましたが、楽しんでくれたようで良かったです！"],
+  [3, "この監督ならもう少し良いものができたような。。。"],
+  [3, "内容はぼちぼちでしたが、細かい描写は素敵でした！"],
+  [3, "事前知識ゼロでも楽しめる映画でよかったです！"],
+  [3, "想像以上に面白くてビックリしました！笑"],
+  [4, "この監督の作品は、毎回安定して楽しませてもらってます！"],
+  [4, "久しぶりに映画館で見ましたが、とても元気をもらえました！"],
+  [4, "とても魅力的な映画でした！"],
+  [4, "平日の夕方に映画館に行きましたが、ほぼ満席の人気ぶりでした"],
+  [4, "何度もビックリするシーンがあり、ドキドキしながら見てました！"],
+  [4, "これはまた観たい＼(^o^)／"],
+  [4, "全体として良かったのですが、特にエンディングは感動しました。"],
+  [5, "観るたびにハマります！もう3回観たけどまた観たいです！"],
+  [5, "かなり面白かったです！！"],
+  [5, "ここ最近見た映画の中で一番にお気に入りになりました。オススメです！"],
+  [5, "メチャメチャいい！途中に流れていた音楽もピッタリで感動しました。"],
+  [5, "最後まで少しも目が離せずにいました！"],
+  [5, "いい意味で期待を裏切られました！最高です！"],
+  [5, "全体の完成度が非常に高くて、大満足です。"]
 ]
 
-reviews = [
-  {
-    user_id: 1,
-    movie_id: 1,
-    point: 4,
-    content: 'おもしろかった',
-  },
-  {
-    user_id: 1,
-    movie_id: 2,
-    point: 4,
-  },
-  {
-    user_id: 1,
-    movie_id: 4,
-    point: 5,
-    content: '最高の気分',
-  },
-  {
-    user_id: 2,
-    movie_id: 3,
-    point: 2,
-  },
-  {
-    user_id: 2,
-    movie_id: 4,
-    point: 4,
-    content: 'なかなかよかった',
-  },
-  {
-    user_id: 3,
-    movie_id: 1,
-    point: 3,
-  },
-  {
-    user_id: 4,
-    movie_id: 1,
-    point: 3,
-    content: 'まあまあ。悪くはないね',
-  },
-  {
-    user_id: 4,
-    movie_id: 2,
-    point: 1,
-  },
-  {
-    user_id: 4,
-    movie_id: 3,
-    point: 5,
-    content: 'もう100回くらい見たい！',
-  },
-  {
-    user_id: 5,
-    movie_id: 1,
-    point: 5,
-  },
-  {
-    user_id: 5,
-    movie_id: 4,
-    point: 2,
-    content: '眠たくなってしまった',
-  },
-  {
-    user_id: 6,
-    movie_id: 2,
-    point: 4,
-  },
-  {
-    user_id: 6,
-    movie_id: 3,
-    point: 4,
-    content: 'なかなかいい映画！',
-  },
-  {
-    user_id: 7,
-    movie_id: 3,
-    point: 3,
-  },
-]
-
-User.create(users)
-
-Review.create(reviews)
+Movie.all.each do |movie|
+  count = Random.rand(10..20)
+  review_users = User.all.sample(count)
+  review_samples = reviews_data.sample(count)
+  count.times do |i|
+    review = Review.create(
+      point: review_samples[i][0],
+      content: review_samples[i][1],
+      user_id: review_users[i].id,
+      movie_id: movie.id,
+    )
+  end
+end
