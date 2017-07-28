@@ -44,6 +44,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise' # if you need
+gem 'will_paginate'
 
 # Progateで使う際には消す
 gem 'haml-rails'

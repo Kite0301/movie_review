@@ -46,7 +46,7 @@
 
     %h2 みんなの評価
     .review-item-wrapper
-      - @movie.reviews.each do |review|
+      - @reviews.each do |review|
         - if review.user != @current_user
           .review-item
             = link_to "/users/#{review.user.id}" do
@@ -57,3 +57,4 @@
               = review.point
             - if review.content
               .review-item__content= review.content
+      = will_paginate @reviews
