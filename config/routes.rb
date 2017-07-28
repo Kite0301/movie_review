@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   post 'reviews/:id/update' => 'reviews#update'
   post 'reviews/:id/destroy' => 'reviews#destroy'
 
+  get 'categories' => 'categories#index'
+  get 'categories/:id/movies' => 'categories#show'
+
 end

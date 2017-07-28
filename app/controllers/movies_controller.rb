@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by(id: params[:id])
+    @categories = @movie.categories
   end
 
   def search
