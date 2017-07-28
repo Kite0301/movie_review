@@ -45,9 +45,10 @@ body {
 }
 
 .main {
-  position: absolute;
+  // position: absolute;
   // top: 64px;
   padding-top: 124px;
+  padding-bottom: 80px;
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -122,6 +123,17 @@ header {
   float: left;
   margin: 0;
   font-size: 13px;
+}
+
+/* フッター ================================ */
+footer {
+  height: 200px;
+  background: #fff;
+}
+
+.footer-logo {
+  padding-top: 40px;
+  font-size: 15px;
 }
 
 /* フラッシュ ================================ */
