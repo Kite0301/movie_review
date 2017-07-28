@@ -4,6 +4,7 @@
       = form_tag('/movies/search', :method => :get) do
         %input{ class: 'search-input', name: 'search_word', value: params[:search_word], placeholder: '気になる映画を検索する' }
         %input{ class: 'search-btn', type: 'submit', value: '検索' }
+    = link_to('カテゴリーから探す', '/categories')
     - if @movies != []
       .movie-card-wrapper
         - @movies.each do |movie|

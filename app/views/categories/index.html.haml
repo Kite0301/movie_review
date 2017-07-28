@@ -1,0 +1,8 @@
+.main.categories-index
+  .container
+    %h1 カテゴリー一覧
+    - @categories.each do |category|
+      = link_to "/categories/#{category.id}/movies" do
+        .category-item{ style: "background-image: url('https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{category.movies.first.image}')" }
+          .inner-bg
+            %span= category.name

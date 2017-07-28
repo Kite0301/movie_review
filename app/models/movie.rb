@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
   has_many :reviews
+  has_many :movies_categories
+  has_many :categories, through: :movies_categories
 
   def average_point
     reviews = self.reviews

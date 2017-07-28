@@ -22,8 +22,12 @@
           %img{ src: "https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/#{@movie.image}" }
         - else
           %img{ src: 'https://s3-ap-northeast-1.amazonaws.com/dev-movie-com/images/dummy.png' }
-
       .movie-detail__text
+        .movie-categories
+          - if @categories != []
+            %p カテゴリー
+            - @categories.each do |category|
+              = link_to(category.name, "/categories/#{category.id}/movies")
         %p
           劇場公開日:
           = @movie.release_date.strftime("%Y年%m月%d日")
