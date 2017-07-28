@@ -4,6 +4,8 @@ class ReviewsController < ApplicationController
 
   def index
     @movie = Movie.find_by(id: params[:movie_id])
+    @reviews = Review.where(movie_id: @movie.id)
+                     .paginate(page: params[:page], :per_page => 20)
   end
 
   def new
