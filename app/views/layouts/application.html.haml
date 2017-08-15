@@ -12,9 +12,9 @@
       .container
         .header-logo
           - if @current_user
-            = link_to 'Movie.com', '/movies'
+            = link_to 'FILMMATE', '/movies'
           - else
-            = link_to 'Movie.com', '/'
+            = link_to 'FILMMATE', '/'
         %ul.header-menus
           %li= link_to '映画一覧', '/movies'
           - if @current_user
@@ -28,8 +28,3 @@
       .flash= flash[:notice]
 
     = yield
-
-    // フッターのデザインと内容も任せた！！ by相馬
-    %footer
-      .container
-        .footer-logo MovieReview
